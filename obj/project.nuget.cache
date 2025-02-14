@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "9bxxwgBaTxc=",
+  "dgSpecHash": "G0RLd0J8YTM=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Ahmed\\Dev\\MarketRPG-raylib\\MarketRPG.csproj",
+  "projectFilePath": "C:\\Users\\Ahmed\\Dev\\MarketRPG\\MarketRPG.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Ahmed\\.nuget\\packages\\raylib-cs\\7.0.1\\raylib-cs.7.0.1.nupkg.sha512"
   ],

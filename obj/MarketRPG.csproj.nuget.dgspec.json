@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Ahmed\\Dev\\MarketRPG-raylib\\MarketRPG.csproj": {}
+    "C:\\Users\\Ahmed\\Dev\\MarketRPG\\MarketRPG.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Ahmed\\Dev\\MarketRPG-raylib\\MarketRPG.csproj": {
+    "C:\\Users\\Ahmed\\Dev\\MarketRPG\\MarketRPG.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Ahmed\\Dev\\MarketRPG-raylib\\MarketRPG.csproj",
+        "projectUniqueName": "C:\\Users\\Ahmed\\Dev\\MarketRPG\\MarketRPG.csproj",
         "projectName": "MarketRPG",
-        "projectPath": "C:\\Users\\Ahmed\\Dev\\MarketRPG-raylib\\MarketRPG.csproj",
+        "projectPath": "C:\\Users\\Ahmed\\Dev\\MarketRPG\\MarketRPG.csproj",
         "packagesPath": "C:\\Users\\Ahmed\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Ahmed\\Dev\\MarketRPG-raylib\\obj\\",
+        "outputPath": "C:\\Users\\Ahmed\\Dev\\MarketRPG\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
