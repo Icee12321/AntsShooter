@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "9bxxwgBaTxc=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Ahmed\\Dev\\MarketRPG-raylib\\MarketRPG.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Ahmed\\.nuget\\packages\\raylib-cs\\7.0.1\\raylib-cs.7.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}
