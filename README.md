@@ -1,9 +1,9 @@
 # MarketRPG
 
 
-- fix the terminal for debugging
-- add animations 
+- fix the terminal for debugging (done)
 - code a smooth camera system
+- add animations
 
 ## another day
 
@@ -12,3 +12,5 @@
 ## another day
 
 - add the market state
+
+

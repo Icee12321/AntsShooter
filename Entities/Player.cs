@@ -6,9 +6,10 @@ namespace MarketRPG.Entities;
 
 public class Player : Entity
 {
-    private const float speed = 2000;
     private Vector2 velocity;
-    private const float maxSpeed = 200f;
+    private const float speed = 50f;
+    private const float friction = 0.1f;
+    private const float maxSpeed = 5f;
     private int facing = 1;
 
     public Player() : base()
@@ -38,7 +39,7 @@ public class Player : Entity
         {
             if (Math.Abs(velocity.X) > 10)
             {
-                velocity.X -= Math.Sign(velocity.X) * speed * Raylib.GetFrameTime();
+                velocity.X -= Math.Sign(velocity.X) * friction * Raylib.GetFrameTime();
             }
             else
             {
@@ -46,7 +47,7 @@ public class Player : Entity
             }
         }
 
-        position += velocity * Raylib.GetFrameTime();
+        position += velocity;
 
         Console.WriteLine(facing);
     }
@@ -57,11 +58,11 @@ public class Player : Entity
 
         if (facing == 1)
         {
-            Raylib.DrawRectangle((int) position.X, (int) position.Y, 50, 50, Color.Red);
+            Raylib.DrawRectangle((int)MathF.Round(position.X), (int)MathF.Round(position.Y), 50, 50, Color.Red);
         }
         else 
         {
-            Raylib.DrawRectangle((int) position.X, (int) position.Y, 50, 50, Color.Red);
+            Raylib.DrawRectangle((int)MathF.Round(position.X), (int)MathF.Round(position.Y), 50, 50, Color.Red);
             // draw the flipped version of the texture
         }
     }
