@@ -1,13 +1,13 @@
-﻿using MarketRPG.Systems;
+﻿using AntsShooter.Systems;
 using Raylib_cs;
 
-namespace MarketRPG;
+namespace AntsShooter;
 
 class Program
 {
     public static void Main()
     {
-        Raylib.InitWindow(Globals.SCREEN_WIDTH, Globals.SCREEN_HEIGHT, "MarketRPG");
+        Raylib.InitWindow(Globals.SCREEN_WIDTH, Globals.SCREEN_HEIGHT, "AntsShooter");
         Game game = new Game();
         
         Raylib.SetTargetFPS(60);

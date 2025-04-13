@@ -1,7 +1,7 @@
 using System.Numerics;
 using Raylib_cs;
 
-namespace MarketRPG.Entities;
+namespace AntsShooter.Entities;
 
 public class Entity
 {

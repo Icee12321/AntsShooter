@@ -1,7 +1,7 @@
 ﻿using Raylib_cs;
 using System.Numerics;
 
-namespace MarketRPG.Editor
+namespace AntsShooter.Editor
 {
     class LevelEditor
     {

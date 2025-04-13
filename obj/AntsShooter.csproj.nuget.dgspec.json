@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/icee/Dev/MarketRPG/MarketRPG.csproj": {}
+    "/home/icee/Dev/AntsShooter/AntsShooter.csproj": {}
   },
   "projects": {
-    "/home/icee/Dev/MarketRPG/MarketRPG.csproj": {
+    "/home/icee/Dev/AntsShooter/AntsShooter.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/icee/Dev/MarketRPG/MarketRPG.csproj",
-        "projectName": "MarketRPG",
-        "projectPath": "/home/icee/Dev/MarketRPG/MarketRPG.csproj",
+        "projectUniqueName": "/home/icee/Dev/AntsShooter/AntsShooter.csproj",
+        "projectName": "AntsShooter",
+        "projectPath": "/home/icee/Dev/AntsShooter/AntsShooter.csproj",
         "packagesPath": "/home/icee/.nuget/packages/",
-        "outputPath": "/home/icee/Dev/MarketRPG/obj/",
+        "outputPath": "/home/icee/Dev/AntsShooter/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/icee/.nuget/NuGet/NuGet.Config"

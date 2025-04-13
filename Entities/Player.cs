@@ -1,8 +1,8 @@
 using System.Numerics;
-using MarketRPG.Systems;
+using AntsShooter.Systems;
 using Raylib_cs;
 
-namespace MarketRPG.Entities;
+namespace AntsShooter.Entities;
 
 public class Player : Entity
 {
@@ -12,6 +12,11 @@ public class Player : Entity
     private const float maxSpeed = 5f;
     private int facing = 1;
 
+    private const float jumpSpeed = 50f;
+    private bool isJumping;
+    private const float gravity = 50f;
+    private const int jumpHight = 50;
+
     public Player() : base()
     {
         position = new Vector2(Globals.SCREEN_WIDTH/2, Globals.SCREEN_HEIGHT/2);
@@ -19,10 +24,8 @@ public class Player : Entity
         velocity = Vector2.Zero;
     }
     
-    public override void Update()
+    public void HandelMovement()
     {
-        base.Update();
-
         if (Raylib.IsKeyDown(KeyboardKey.D))
         {
             velocity.X += speed * Raylib.GetFrameTime();
@@ -46,10 +49,51 @@ public class Player : Entity
                 velocity.X = 0;
             }
         }
+    }
+   
+    public void HandelJump()
+    {
+        if (Raylib.IsKeyPressed(KeyboardKey.W))
+        {
+            isJumping = true;
+        }
+        
+        if (isJumping)
+        {
+            if (position.Y <= Globals.originPlayerPos.Y - jumpHight)
+            {
+                isJumping = false;
+            }
+            else
+            {
+                velocity.Y -= jumpSpeed * Raylib.GetFrameTime();
+            }
+        }
+        else
+        {
+            if (position.Y < Globals.originPlayerPos.Y)
+            {
+                velocity.Y += jumpSpeed * Raylib.GetFrameTime();
+                Console.WriteLine(Globals.originPlayerPos);   
+            }
+            
+            if (position.Y >= Globals.originPlayerPos.Y)
+            {
+                position.Y = Globals.originPlayerPos.Y;
+                velocity.Y = 0;
+            }
+        }
+    }
+    
+    public override void Update()
+    {
+        base.Update();
+        
+        HandelMovement();
+        HandelJump();
 
         position += velocity;
-
-        Console.WriteLine(facing);
+        // Console.WriteLine( "X: " + position.X + ", Y: " + position.Y);
     }
     
     public override void Draw()
@@ -60,7 +104,7 @@ public class Player : Entity
         {
             Raylib.DrawRectangle((int)MathF.Round(position.X), (int)MathF.Round(position.Y), 50, 50, Color.Red);
         }
-        else 
+        else
         {
             Raylib.DrawRectangle((int)MathF.Round(position.X), (int)MathF.Round(position.Y), 50, 50, Color.Red);
             // draw the flipped version of the texture

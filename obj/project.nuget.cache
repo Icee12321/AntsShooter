@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "t8C55ev7ugQ=",
+  "dgSpecHash": "BM8LZSr76dI=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Ahmed\\Dev\\MarketRPG\\MarketRPG.csproj",
+  "projectFilePath": "/home/icee/Dev/AntsShooter/AntsShooter.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Ahmed\\.nuget\\packages\\raylib-cs\\7.0.1\\raylib-cs.7.0.1.nupkg.sha512"
+    "/home/icee/.nuget/packages/raylib-cs/7.0.1/raylib-cs.7.0.1.nupkg.sha512"
   ],
   "logs": []
 }

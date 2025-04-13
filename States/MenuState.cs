@@ -1,4 +1,4 @@
-namespace MarketRPG.States;
+namespace AntsShooter.States;
 
 public class MenuState : IState
 {

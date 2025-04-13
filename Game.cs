@@ -1,10 +1,18 @@
-using MarketRPG.States;
+using AntsShooter.States;
+using AntsShooter.Systems;
+using Raylib_cs;
 
 
-namespace MarketRPG;
+namespace AntsShooter;
 
 public class Game
 {
+
+    public Game()
+    {
+        
+    }
+    
     public void Update()
     {
         StatesManager.Update();

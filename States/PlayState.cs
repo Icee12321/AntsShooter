@@ -1,11 +1,11 @@
 using System.Numerics;
 using System.Runtime.CompilerServices;
-using MarketRPG.Entities;
-using MarketRPG.Systems;
-using MarketRPG.Editor;
+using AntsShooter.Editor;
+using AntsShooter.Entities;
+using AntsShooter.Systems;
 using Raylib_cs;
 
-namespace MarketRPG.States
+namespace AntsShooter.States
 {
     public class PlayState : IState
     {
