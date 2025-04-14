@@ -12,10 +12,11 @@ public class Player : Entity
     private const float maxSpeed = 5f;
     private int facing = 1;
 
-    private const float jumpSpeed = 50f;
-    private bool isJumping;
+    private const float jumpSpeed = 20f;
+    private bool isJumping = false;
+    private bool isFalling = false;
     private const float gravity = 50f;
-    private const int jumpHight = 50;
+    private const int jumpHight = 2;
 
     public Player() : base()
     {
@@ -26,13 +27,13 @@ public class Player : Entity
     
     public void HandelMovement()
     {
-        if (Raylib.IsKeyDown(KeyboardKey.D))
+        if (Raylib.IsKeyDown(KeyboardKey.D) && position.X < Globals.MAP_WIDTH)
         {
             velocity.X += speed * Raylib.GetFrameTime();
             if (velocity.X > maxSpeed) velocity.X = maxSpeed;
             facing = 1;
         }
-        else if (Raylib.IsKeyDown(KeyboardKey.A))
+        else if (Raylib.IsKeyDown(KeyboardKey.A) && position.X > 0)
         {
             velocity.X -= speed * Raylib.GetFrameTime();
             if (velocity.X < -maxSpeed) velocity.X = -maxSpeed;
@@ -49,38 +50,36 @@ public class Player : Entity
                 velocity.X = 0;
             }
         }
+        
+        Console.WriteLine(isJumping);
     }
-   
-    public void HandelJump()
+    
+    public void HandleJump()
     {
-        if (Raylib.IsKeyPressed(KeyboardKey.W))
+        if (Raylib.IsKeyPressed(KeyboardKey.W) && !isJumping && !isFalling)
         {
             isJumping = true;
+            velocity.Y = -jumpSpeed; // start upward velocity
         }
-        
+
         if (isJumping)
         {
-            if (position.Y <= Globals.originPlayerPos.Y - jumpHight)
+            if (position.Y <= Globals.originPlayerPos.Y - 1)
             {
                 isJumping = false;
-            }
-            else
-            {
-                velocity.Y -= jumpSpeed * Raylib.GetFrameTime();
+                isFalling = true;
             }
         }
-        else
+
+        if (isFalling)
         {
-            if (position.Y < Globals.originPlayerPos.Y)
-            {
-                velocity.Y += jumpSpeed * Raylib.GetFrameTime();
-                Console.WriteLine(Globals.originPlayerPos);   
-            }
-            
+            velocity.Y += gravity * Raylib.GetFrameTime();
+
             if (position.Y >= Globals.originPlayerPos.Y)
             {
                 position.Y = Globals.originPlayerPos.Y;
                 velocity.Y = 0;
+                isFalling = false;
             }
         }
     }
@@ -90,7 +89,7 @@ public class Player : Entity
         base.Update();
         
         HandelMovement();
-        HandelJump();
+        HandleJump();
 
         position += velocity;
         // Console.WriteLine( "X: " + position.X + ", Y: " + position.Y);
@@ -102,11 +101,11 @@ public class Player : Entity
 
         if (facing == 1)
         {
-            Raylib.DrawRectangle((int)MathF.Round(position.X), (int)MathF.Round(position.Y), 50, 50, Color.Red);
+            Raylib.DrawRectangle((int)MathF.Round(position.X), (int)MathF.Round(position.Y), width, height, Color.Red);
         }
         else
         {
-            Raylib.DrawRectangle((int)MathF.Round(position.X), (int)MathF.Round(position.Y), 50, 50, Color.Red);
+            Raylib.DrawRectangle((int)MathF.Round(position.X), (int)MathF.Round(position.Y), width, height, Color.Red);
             // draw the flipped version of the texture
         }
     }

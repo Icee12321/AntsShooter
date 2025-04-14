@@ -7,6 +7,8 @@ public class Entity
 {
     public Vector2 position;
     public Texture2D texture;
+    public int height = 50;
+    public int width = 50;
 
     public Entity()
     {
